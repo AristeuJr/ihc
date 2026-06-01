@@ -1,0 +1,17 @@
+{
+  "name": "justdoeat-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js para o projeto Just Do Eat",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "backend",
+    "justdoeat"
+  ],
+  "author": "",
+  "license": "ISC"
+}
