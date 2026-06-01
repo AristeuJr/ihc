@@ -1,8 +1,10 @@
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 const ROOT_DIR = path.join(__dirname, "..");
-const DATA_DIR = path.join(ROOT_DIR, "data");
+const isServerless = Boolean(process.env.VERCEL || process.env.LAMBDA_TASK_ROOT);
+const DATA_DIR = process.env.DATA_DIR || (isServerless ? path.join(os.tmpdir(), "justdoeat-data") : path.join(ROOT_DIR, "data"));
 const DB_FILE = path.join(DATA_DIR, "database.json");
 
 function ensureDatabase() {
